@@ -1,3 +1,4 @@
+from lzma import FILTER_LZMA1
 from tqdm import tqdm
 
 def compare(input_coord:str, input_address:str, outputfile:str):
@@ -6,7 +7,7 @@ def compare(input_coord:str, input_address:str, outputfile:str):
         number_place = 2
         street_place = 3
         with open(input_address) as file2:
-            with open(outputfile, "w") as outputfile:
+            with open(outputfile, "w+") as outputfile:
                 outputfile.write("NAME, BILLING_ADDRESS, HOME_ADDRESS, LON, LAT\n")
                 lines1 = file.readlines()
                 name = 0

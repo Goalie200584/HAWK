@@ -6,8 +6,8 @@ from img_to_text import format_text
 
 if __name__ == "__main__":
     csv_write_lake_coords("../Input/lake_extractor/Kezar.kml", "../Output/Lake_Coordinates/")
-    csvwrite_address_lines("04364", "../Output/Address_Coordinates/", "Winthrop", "../Input/address_extractor/me_statewide.csv")
+    csvwrite_address_lines("../Input/address_extractor/me_statewide.csv","../Output/Address_Coordinates/",  "04364")
     Convert_to_PNG('../Input/img_to_text/Winthrop_Commitment.pdf', '../Temp_Files/Convert_to_PNG/')
     cropPNG('../Temp_Files/Convert_to_PNG/', '../Temp_Files/Img_Cropper/')
-    format_text('../Temp_Files/Img_Cropper/', "../Temp_Files/Img_to_Text/output.csv")
+    format_text('../Temp_Files/Img_Cropper/', "../Output/Img_to_Text/output.csv")
 

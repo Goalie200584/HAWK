@@ -21,15 +21,14 @@ def line_numbers(post_code:str, statewide_csv_dir:str):
                 line_num += 1
 
             
-def csvwrite_address_lines(post_code:str, outputdir:str, town_name:str, statewide_csv_dir:str):
+def csvwrite_address_lines( statewide_csv_dir:str, outputdir:str, post_code:str):
     line_numbers(post_code, statewide_csv_dir)
-    output_file = outputdir + town_name + ".csv"
+    output_file = outputdir + "coords.csv"
     with open(statewide_csv_dir) as file:
         lines = file.readlines()
         with open(output_file, "x+") as file2:
             file2.write("LON,LAT,NUMBER,STREET,UNIT,CITY,DISTRICT,REGION,POSTCODE,ID,HASH\n")
             for x in lines_with_postcode:
-
                 file2.write(lines[x - 1])
     
     

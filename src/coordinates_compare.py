@@ -4,11 +4,11 @@ import math
 
 def find_water_front(inputadd: str, inputlake_dir: str, outputdir: str, distance: float) -> None: # distance in meters
     num_of_files = os.listdir(inputlake_dir)
-    
+    printed_addresses = []
 
     with open(inputadd) as file:
-        with open(outputdir, "x+") as outputfile:
-            outputfile.write("NAME, BILLING_ADDRESS, HOME_ADDRESS, LON, LAT")
+        with open(outputdir, "w+") as outputfile:
+            outputfile.write("NAME, BILLING_ADDRESS, HOME_ADDRESS, LON, LAT\n")
             for i in range(len(num_of_files)):
                 if i == 0:
                     csv_name = "lake_coords.csv"
@@ -20,22 +20,43 @@ def find_water_front(inputadd: str, inputlake_dir: str, outputdir: str, distance
                     lines2 = file2.readlines()
                     p = 0
                     for x in lines1:
+                        f = x
                         if p == 0:
+                            p += 1
                             continue
                         x = x.split(",")
                         lon1 = float(x[-2])
                         lat1 = float(x[-1])
+                        l = 0
                         for v in lines2:
+                            if l == 0:
+                                l += 1
+                                continue 
+                            lake_coord = v.split(",")
                             
-                            lakelon = float(v[0])
-                            lakelat = float(v[1])
+                            lakelon = float(lake_coord[0])
+                            lakelat = float(lake_coord[1])
                             true_or_false = determine_water_front(lon1, lat1, lakelon, lakelat, distance)
+                            
+                            # print(true_or_false)
+                            # print(lon1)
+                            
+                            printed_num = len(printed_addresses)
+                            indicator = 1
+                            
+                            if printed_num >= 1:
+                                for n in printed_addresses:
+                                    if f == n:
+                                        indicator = -1
+                                        break
 
-                            if true_or_false == True:
-                                outputfile.write(x)
+                            if true_or_false == True and indicator == 1:
+                                printed_addresses.append(f)
+                                outputfile.write(f)
+                                continue
+
                             elif true_or_false == False:
-                                print("BAD")
-                                break
+                                continue
                         
                         p += 1
 
@@ -69,4 +90,4 @@ def determine_water_front(lon1: float, lat1: float, lakelon: float, lakelat: flo
                 
             
             
-find_water_front("../Output/address_and_coords/addresses_together.csv", "../Output/Lake_Coordinates/", "../Lakefront_Properties/lakefront_properties.csv", 100)
+find_water_front("../Output/address_and_coords/addresses_together.csv", "../Output/Lake_Coordinates/", "../Lakefront_Properties/lakefront_properties.csv", 150)

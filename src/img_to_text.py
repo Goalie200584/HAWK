@@ -21,6 +21,9 @@ def get_text(inputdir:str):
         text.append(text_from_img)
         img_counter += 1
     return text
+    # text_from_img = pt.image_to_string(inputdir + "address_1733.png")
+    # text.append(text_from_img)
+    # return text
     
     
 
@@ -29,7 +32,7 @@ def get_text(inputdir:str):
 
 def format_text(inputdir:str, outputdir:str):
     text = get_text(inputdir) 
-    with open(outputdir, "x+") as file:
+    with open(outputdir, "w+") as file:
         file.write("NAME,BILLING_ADDRESS,HOME_ADDRESS\n")
         for image_text in tqdm(text):
             lines = 0
@@ -84,14 +87,18 @@ def format_text(inputdir:str, outputdir:str):
 
 
             name = name.replace(",", ";")
+            billing = billing.replace(",", ";")
+            home_address = home_address.replace(",", ";")
             writing = name + "," + billing + ',' + home_address + "\n"
 
             file.write(writing)
 
             
-    
+image_cropped = '../Temp_Files/Img_Cropper/'
+img_text = "../Output/Img_to_Text/im_to_txt_output.csv"
         
-            
+
+format_text(image_cropped, img_text)
         
 
 

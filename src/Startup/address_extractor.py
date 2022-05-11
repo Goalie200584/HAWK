@@ -23,7 +23,7 @@ def line_numbers(post_code:str, statewide_csv_dir:str):
             
 def csvwrite_address_lines( statewide_csv_dir:str, outputfile:str, post_code:str):
     line_numbers(post_code, statewide_csv_dir)
-    output_file = outputfile + "coords.csv"
+    output_file = outputfile
     with open(statewide_csv_dir) as file:
         lines = file.readlines()
         with open(output_file, "x+") as file2:

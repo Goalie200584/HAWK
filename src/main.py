@@ -15,7 +15,7 @@ commitment_pdf = '../Input/img_to_text/Winthrop_Commitment.pdf' # should be a .p
 pdf_to_png = '../Temp_Files/Convert_to_PNG/' # should be a dir of the converted from pdf to png at the end
 image_cropped = '../Temp_Files/Img_Cropper/' # shoudld be the dir of the cropped images at the end 
 img_text = "../Output/Img_to_Text/im_to_txt_output.csv" # should be the .csv file of the 
-output_for_address_compare = "../Output/address_and_coords/all_together.csv" # should be a file in the output folder at the end of this
+output_for_address_compare = "../Output/address_and_coords/addresses_together.csv" # should be a file in the output folder at the end of this
 
 if __name__ == "__main__":
     

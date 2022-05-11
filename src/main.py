@@ -1,5 +1,3 @@
-from email.mime import image
-from pyexpat import XML_PARAM_ENTITY_PARSING_ALWAYS
 from Startup.lake_extractor import csv_write_lake_coords
 from Startup.address_extractor import csvwrite_address_lines
 from pdf_to_img import Convert_to_PNG
@@ -17,6 +15,7 @@ commitment_pdf = '../Input/img_to_text/Winthrop_Commitment.pdf' # should be a .p
 pdf_to_png = '../Temp_Files/Convert_to_PNG/' # should be a dir of the converted from pdf to png at the end
 image_cropped = '../Temp_Files/Img_Cropper/' # shoudld be the dir of the cropped images at the end 
 img_text = "../Output/Img_to_Text/im_to_txt_output.csv" # should be the .csv file of the 
+output_for_address_compare = "../Output/address_and_coords/all_together.csv" # should be a file in the output folder at the end of this
 
 if __name__ == "__main__":
     
@@ -25,6 +24,7 @@ if __name__ == "__main__":
     Convert_to_PNG(commitment_pdf, pdf_to_png)
     cropPNG(pdf_to_png, image_cropped)
     format_text(image_cropped, img_text)
+    compare(address_coords_file_output, img_text, output_for_address_compare)
 
 
 

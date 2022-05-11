@@ -63,23 +63,3 @@ def compare(input_coord:str, input_address:str, outputfile:str):
                         
 
 
-
-                        
-                    
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-compare("../Output/Address_Coordinates/coords.csv", "../Output/Img_to_Text/output.csv", "../Output/address_and_coords/all_together.csv" )

@@ -49,7 +49,7 @@ def csv_write_lake_coords(filedir:str, outputdir:str):
                     csv_writes += 1
 
             else:
-                with open(outputdir + "lake_coords_is" + str(csv_writes) + ".csv", "x+") as file2:
+                with open(outputdir + "lake_coords_is_" + str(csv_writes) + ".csv", "x+") as file2:
                     file2.write("Longitude,Latitude,Altitude\n")
                     for i in coordinates:
                         if i == coordinates[0]:

@@ -5,13 +5,13 @@ from img_cropper import cropPNG
 from img_to_text import format_text
 from compare_address_with_coordinates import compare
 
-kml = "../Input/lake_extractor/Kezar.kml" # should be .kml of the google earth lake at the end 
+kml = "../Input/lake_extractor/Given/Kezar.kml" # should be .kml of the google earth lake at the end 
 
 lake_coords_dir = "../Output/Lake_Coordinates/" # should be dir of the lake coordinates at the end
-statewide_address = "../Input/address_extractor/me_statewide.csv" # should be .csv at the end of this
+statewide_address = "../Input/address_extractor/Already Had/me_statewide.csv" # should be .csv at the end of this
 address_coords_file_output = "../Output/Address_Coordinates/coords.csv" # should be file at the end of this
 zip_code = "04364" # Should be the postal code
-commitment_pdf = '../Input/img_to_text/Winthrop_Commitment.pdf' # should be a .pdf file of a tax commitment book at the end
+commitment_pdf = '../Input/img_to_text/Given/Winthrop_Commitment.pdf' # should be a .pdf file of a tax commitment book at the end
 pdf_to_png = '../Temp_Files/Convert_to_PNG/' # should be a dir of the converted from pdf to png at the end
 image_cropped = '../Temp_Files/Img_Cropper/' # shoudld be the dir of the cropped images at the end 
 img_text = "../Output/Img_to_Text/im_to_txt_output.csv" # should be the .csv file of the 

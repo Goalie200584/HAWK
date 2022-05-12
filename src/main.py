@@ -8,7 +8,7 @@ from compare_address_with_coordinates import compare
 kml = "../Input/lake_extractor/Given/Kezar.kml" # should be .kml of the google earth lake at the end 
 
 lake_coords_dir = "../Output/Lake_Coordinates/" # should be dir of the lake coordinates at the end
-statewide_address = "../Input/address_extractor/Already Had/me_statewide.csv" # should be .csv at the end of this
+statewide_address = "../Input/address_extractor/Already Had/us/me/me_statewide.csv" # should be .csv at the end of this
 address_coords_file_output = "../Output/Address_Coordinates/coords.csv" # should be file at the end of this
 zip_code = "04364" # Should be the postal code
 commitment_pdf = '../Input/img_to_text/Given/Winthrop_Commitment.pdf' # should be a .pdf file of a tax commitment book at the end

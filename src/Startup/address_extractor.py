@@ -12,11 +12,14 @@ def line_numbers(post_code:str, statewide_csv_dir:str):
 
         for x in lines:
             if line_num == 1:
+                for q, i in enumerate(x):
+                    if i == "postcode":
+                        index_needed_for_find = q
                 line_num += 1
                 continue
             elif line_num > 1:
                 x = x.split(",")
-                if x[8] == post_code:
+                if x[index_needed_for_find] == post_code:
                     lines_with_postcode.append(line_num)
                 line_num += 1
 
